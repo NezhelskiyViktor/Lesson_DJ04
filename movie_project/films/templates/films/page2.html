@@ -1,0 +1,21 @@
+{% extends 'films/layout.html' %}
+
+{% block content %}
+<br>
+<h4 style="font-family: BadScript, cursive; font-weight: bold;">Отзывы</h4>
+<div class="list">
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.title }}
+    </div>
+    <div class="form-group">
+        {{ form.description }}
+    </div>
+    <div class="form-group">
+        {{ form.text }}
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>    <p>{{error}}</p>
+</div>
+{% endblock %}

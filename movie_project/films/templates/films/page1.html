@@ -1,0 +1,20 @@
+{% extends 'films/layout.html' %}
+
+{% block content %}
+<br>
+<h4 style="font-family: BadScript, cursive; font-weight: bold;">Фильмы</h4>
+<div>
+    {% if films %}
+        {% for film in films %}
+        <div>
+            <h3>{{ film.title }}</h3>
+            <p class="list"><strong>Описание фильма: </strong>{{ film.description }}</p>
+            <p class="list"><strong>Отзыв о фильме: </strong>{{ film.text }}</p>
+            <hr>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Отзывов о фильмых ещё нет.</p>
+    {% endif %}
+</div>
+{% endblock %}
